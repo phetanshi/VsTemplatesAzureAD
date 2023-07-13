@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+<ThemeProvider />
+<DialogProvider />
+<SnackbarProvider />
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <AuthorizeView>
+            <Authorized>
+                <AppHeader UserName="@userName" IsAuthenticated="true" />
+            </Authorized>
+            <NotAuthorized>
+                <AppHeader UserName="@userName" IsAuthenticated="false" />
+            </NotAuthorized>
+        </AuthorizeView>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
