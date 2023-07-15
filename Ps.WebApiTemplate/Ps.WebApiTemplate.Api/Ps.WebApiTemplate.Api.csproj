@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ps.WebApiTemplate.Data\Ps.WebApiTemplate.Data.csproj" />
+    <ProjectReference Include="..\Ps.WebApiTemplate.Dtos\Ps.WebApiTemplate.Dtos.csproj" />
     <ProjectReference Include="..\Ps.WebApiTemplate.Logging\Ps.WebApiTemplate.Logging.csproj" />
   </ItemGroup>
 

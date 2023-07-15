@@ -1,4 +1,6 @@
-﻿namespace Ps.WebApiTemplate.UnitTest.Data
+﻿using Ps.Donet.EFCoreRepository;
+
+namespace Ps.WebApiTemplate.UnitTest.Data
 {
     public partial class AppRepositoryTests
     {
@@ -6,7 +8,7 @@
         public void Update_WhenCalledWithOneObject_ReturnsNothingButDataWillbeUpdatedInDb()
         {
 
-            Mock<ILogger<AppRepository>> mockLogging = new Mock<ILogger<AppRepository>>();
+            Mock<ILogger<Repository>> mockLogging = new Mock<ILogger<Repository>>();
 
             var dbOptions = TestDatabaseHelper.CreateTestDatabase();
 
@@ -14,7 +16,7 @@
             {
                 Employee emp = new Employee { EmployeeId = 1, UserId = "CORP\\e999999", FirstName = "TestUpdated", LastName = "Updated", CreatedBy = DateTime.Now.ToString() };
 
-                AppRepository repository = new AppRepository(testDbContext, mockLogging.Object);
+                Repository repository = new Repository(testDbContext, mockLogging.Object);
                 repository.Update(emp);
 
                 Employee empTest = repository.GetById<Employee>(1);
@@ -27,7 +29,7 @@
         public async Task UpdateAsync_WhenCalledWithOneObject_ReturnsNothingButDataWillbeUpdatedInDb()
         {
 
-            Mock<ILogger<AppRepository>> mockLogging = new Mock<ILogger<AppRepository>>();
+            Mock<ILogger<Repository>> mockLogging = new Mock<ILogger<Repository>>();
 
             var dbOptions = TestDatabaseHelper.CreateTestDatabase();
 
@@ -35,7 +37,7 @@
             {
                 Employee emp = new Employee { EmployeeId = 1, UserId = "CORP\\e999999", FirstName = "TestUpdatedAsync", LastName = "Updated", CreatedBy = DateTime.Now.ToString() };
 
-                AppRepository repository = new AppRepository(testDbContext, mockLogging.Object);
+                Repository repository = new Repository(testDbContext, mockLogging.Object);
                 await repository.UpdateAsync(emp);
 
                 Employee empTest = repository.GetById<Employee>(1);

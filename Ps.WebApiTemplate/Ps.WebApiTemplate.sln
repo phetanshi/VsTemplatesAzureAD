@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps.WebApiTemplate.Api", "Ps.WebApiTemplate.Api\Ps.WebApiTemplate.Api.csproj", "{3B61A2D5-26CA-439D-B6F2-730E74302323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.Api", "Ps.WebApiTemplate.Api\Ps.WebApiTemplate.Api.csproj", "{3B61A2D5-26CA-439D-B6F2-730E74302323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps.WebApiTemplate.Data", "Ps.WebApiTemplate.Data\Ps.WebApiTemplate.Data.csproj", "{3222AE7E-0062-4067-B216-E7D180FD1436}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.Data", "Ps.WebApiTemplate.Data\Ps.WebApiTemplate.Data.csproj", "{3222AE7E-0062-4067-B216-E7D180FD1436}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps.WebApiTemplate.Logging", "Ps.WebApiTemplate.Logging\Ps.WebApiTemplate.Logging.csproj", "{D28F711C-A554-4B93-ADF0-83F57B3AC378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.Logging", "Ps.WebApiTemplate.Logging\Ps.WebApiTemplate.Logging.csproj", "{D28F711C-A554-4B93-ADF0-83F57B3AC378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps.WebApiTemplate.UnitTest", "Ps.WebApiTemplate.UnitTest\Ps.WebApiTemplate.UnitTest.csproj", "{1DC510D6-30BE-430D-B596-62CD3AA73C0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.UnitTest", "Ps.WebApiTemplate.UnitTest\Ps.WebApiTemplate.UnitTest.csproj", "{1DC510D6-30BE-430D-B596-62CD3AA73C0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.Donet.EFCoreRepository", "..\..\NuGetPoc\Ps.Donet.EFCoreRepository\Ps.Donet.EFCoreRepository.csproj", "{96B2F506-904D-49C3-81C4-E8053212A3B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps.WebApiTemplate.Dtos", "Ps.WebApiTemplate.Dtos\Ps.WebApiTemplate.Dtos.csproj", "{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{1DC510D6-30BE-430D-B596-62CD3AA73C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC510D6-30BE-430D-B596-62CD3AA73C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC510D6-30BE-430D-B596-62CD3AA73C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

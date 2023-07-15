@@ -1,8 +1,6 @@
-﻿using Ps.WebApiTemplate.Api.Services;
+﻿using Ps.WebApiTemplate.Api.AutoMapperProfiles;
+using Ps.WebApiTemplate.Api.Services;
 using Ps.WebApiTemplate.Api.Services.Definitions;
-using Ps.WebApiTemplate.Data;
-using Ps.WebApiTemplate.Data.Definitions;
-using Ps.WebApiTemplate.Logging;
 
 namespace Ps.WebApiTemplate.Api.AppStart
 {
@@ -11,7 +9,6 @@ namespace Ps.WebApiTemplate.Api.AppStart
         public static IServiceCollection AddApplicationObjects(this IServiceCollection services)
         {
             services.AddServiceDependencies();
-            services.AddRepository();
             services.AddOthes();
             return services;
         }
@@ -20,13 +17,9 @@ namespace Ps.WebApiTemplate.Api.AppStart
         {
             services.AddScoped<ISampleService, SampleService>();
         }
-        private static void AddRepository(this IServiceCollection services)
-        {
-            services.AddScoped<IRepository, AppRepository>();
-        }
         private static void AddOthes(this IServiceCollection services)
         {
-            services.AddScoped<DbLoggerProvider>();
+            services.AddAutoMapper(typeof(EmployeeAutoMapperProfile));
         }
     }
 }

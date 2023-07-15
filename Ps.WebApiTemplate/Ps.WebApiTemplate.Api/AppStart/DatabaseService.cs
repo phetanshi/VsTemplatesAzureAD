@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Ps.Donet.EFCoreRepository.DependencyInjection;
 using Ps.WebApiTemplate.Data.Database;
+//using Ps.WebApiTemplate.Data.DependencyInjection;
 
 namespace Ps.WebApiTemplate.Api.AppStart
 {
@@ -7,16 +9,8 @@ namespace Ps.WebApiTemplate.Api.AppStart
     {
         public static WebApplicationBuilder AddDatabase(this WebApplicationBuilder builder)
         {
-            builder.Services.AddSqlServerDatabase(builder.Configuration);
+            builder.Services.AddEfCoreRepository<AppDbContext>(builder.Configuration, "AppDbConnection");
             return builder;
         }
-        private static IServiceCollection AddSqlServerDatabase(this IServiceCollection services, IConfiguration config)
-        {
-            string connStr = config.GetConnectionString("AppDbConnection");
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(connStr));
-            return services;
-        }
-
-        
     }
 }
