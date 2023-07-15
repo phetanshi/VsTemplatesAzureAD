@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Ps.Donet.EFCoreRepository;
+using Ps.EfCoreRepository.SqlServer;
 using Ps.WebApiTemplate.Data.DbModels;
 using Ps.WebApiTemplate.Dtos;
 

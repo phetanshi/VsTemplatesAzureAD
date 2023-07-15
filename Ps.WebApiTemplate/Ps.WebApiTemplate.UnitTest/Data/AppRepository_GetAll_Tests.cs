@@ -1,4 +1,4 @@
-﻿using Ps.Donet.EFCoreRepository;
+﻿using Ps.EfCoreRepository.SqlServer;
 
 namespace Ps.WebApiTemplate.UnitTest.Data
 {

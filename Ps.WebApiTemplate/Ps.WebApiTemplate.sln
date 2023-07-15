@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.Logging",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.UnitTest", "Ps.WebApiTemplate.UnitTest\Ps.WebApiTemplate.UnitTest.csproj", "{1DC510D6-30BE-430D-B596-62CD3AA73C0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.Donet.EFCoreRepository", "..\..\NuGetPoc\Ps.Donet.EFCoreRepository\Ps.Donet.EFCoreRepository.csproj", "{96B2F506-904D-49C3-81C4-E8053212A3B3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ps.WebApiTemplate.Dtos", "Ps.WebApiTemplate.Dtos\Ps.WebApiTemplate.Dtos.csproj", "{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ps.WebApiTemplate.Dtos", "Ps.WebApiTemplate.Dtos\Ps.WebApiTemplate.Dtos.csproj", "{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{1DC510D6-30BE-430D-B596-62CD3AA73C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC510D6-30BE-430D-B596-62CD3AA73C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC510D6-30BE-430D-B596-62CD3AA73C0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96B2F506-904D-49C3-81C4-E8053212A3B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1865103B-38DA-4C6F-BAAE-76C2D1EFA0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU

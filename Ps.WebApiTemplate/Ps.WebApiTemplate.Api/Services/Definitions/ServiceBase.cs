@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Ps.Donet.EFCoreRepository;
+using Ps.EfCoreRepository.SqlServer;
 
 namespace Ps.WebApiTemplate.Api.Services.Definitions
 {

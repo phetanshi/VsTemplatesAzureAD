@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Ps.Donet.EFCoreRepository.DependencyInjection;
+﻿using Ps.EfCoreRepository.SqlServer.DependencyInjection;
 using Ps.WebApiTemplate.Data.Database;
-//using Ps.WebApiTemplate.Data.DependencyInjection;
 
 namespace Ps.WebApiTemplate.Api.AppStart
 {

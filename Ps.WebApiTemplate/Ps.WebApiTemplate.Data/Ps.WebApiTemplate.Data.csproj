@@ -25,10 +25,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Ps.EfCoreRepository.SqlServer" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\NuGetPoc\Ps.Donet.EFCoreRepository\Ps.Donet.EFCoreRepository.csproj" />
     <ProjectReference Include="..\Ps.WebApiTemplate.Logging\Ps.WebApiTemplate.Logging.csproj" />
   </ItemGroup>
 
