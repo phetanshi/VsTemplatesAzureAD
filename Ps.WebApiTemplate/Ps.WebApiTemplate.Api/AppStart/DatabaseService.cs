@@ -7,7 +7,7 @@ namespace Ps.WebApiTemplate.Api.AppStart
     {
         public static WebApplicationBuilder AddDatabase(this WebApplicationBuilder builder)
         {
-            builder.Services.AddEfCoreRepository<AppDbContext>(builder.Configuration, "AppDbConnection");
+            builder.Services.AddDatabase(builder.Configuration);
             return builder;
         }
     }
