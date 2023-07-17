@@ -1,8 +1,7 @@
-<VSTemplate Version="3.0.0"
-  xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>PS Web Api Template - Azure AD</Name>
-    <Description>.NET 6 Web API project wiht Azure AD Authentication</Description>
+    <Name>Ps.WebApiTemplate.Api</Name>
+    <Description>.NET 6 WEB API Project</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -30,14 +29,17 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="LoggingService.cs">LoggingService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="MiscAppServices.cs">MiscAppServices.cs</ProjectItem>
       </Folder>
+      <Folder Name="AutoMapperProfiles" TargetFolderName="AutoMapperProfiles">
+        <ProjectItem ReplaceParameters="true" TargetFileName="EmployeeAutoMapperProfile.cs">EmployeeAutoMapperProfile.cs</ProjectItem>
+      </Folder>
       <Folder Name="Constants" TargetFolderName="Constants">
         <ProjectItem ReplaceParameters="true" TargetFileName="AppConstants.cs">AppConstants.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ErrorMessages.cs">ErrorMessages.cs</ProjectItem>
       </Folder>
       <Folder Name="Controllers" TargetFolderName="Controllers">
         <ProjectItem ReplaceParameters="true" TargetFileName="AppBaseController.cs">AppBaseController.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="EmployeeController.cs">EmployeeController.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ReadMe.txt">ReadMe.txt</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SampleController.cs">SampleController.cs</ProjectItem>
       </Folder>
       <Folder Name="Exceptions" TargetFolderName="Exceptions">
         <ProjectItem ReplaceParameters="true" TargetFileName="UnauthorizedException.cs">UnauthorizedException.cs</ProjectItem>

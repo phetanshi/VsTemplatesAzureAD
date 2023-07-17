@@ -25,6 +25,9 @@
       <ProjectTemplateLink ProjectName="$projectname$.Data" CopyParameters="true">
         Ps.WebApiTemplate.Data\MyTemplate.vstemplate
       </ProjectTemplateLink>
+      <ProjectTemplateLink ProjectName="$projectname$.Dtos" CopyParameters="true">
+        Ps.WebApiTemplate.Dtos\MyTemplate.vstemplate
+      </ProjectTemplateLink>
       <ProjectTemplateLink ProjectName="$projectname$.Logging" CopyParameters="true">
         Ps.WebApiTemplate.Logging\MyTemplate.vstemplate
       </ProjectTemplateLink>

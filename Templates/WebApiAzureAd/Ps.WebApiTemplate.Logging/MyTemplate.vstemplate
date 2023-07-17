@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
-    <Name>Ps WebApi Template Logging</Name>
-    <Description>.NET 6 Log project with DB Logger</Description>
+    <Name>Ps.WebApiTemplate.Logging</Name>
+    <Description>.NET 6 Logging project with Database logging</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -29,9 +29,11 @@
       <Folder Name="DependencyInjection" TargetFolderName="DependencyInjection">
         <ProjectItem ReplaceParameters="true" TargetFileName="LoggerService.cs">LoggerService.cs</ProjectItem>
       </Folder>
+      <Folder Name="Extensions" TargetFolderName="Extensions">
+        <ProjectItem ReplaceParameters="true" TargetFileName="DbLoggerServices.cs">DbLoggerServices.cs</ProjectItem>
+      </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="DbLogger.cs">DbLogger.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="DbLoggerConfiguration.cs">DbLoggerConfiguration.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="DbLoggerExtensions.cs">DbLoggerExtensions.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="DbLoggerProvider.cs">DbLoggerProvider.cs</ProjectItem>
     </Project>
   </TemplateContent>

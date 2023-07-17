@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Ps.EfCoreRepository.SqlServer.DependencyInjection;
 using $ext_projectname$.Data.Database;
 
 namespace $safeprojectname$.AppStart
@@ -7,16 +7,8 @@ namespace $safeprojectname$.AppStart
     {
         public static WebApplicationBuilder AddDatabase(this WebApplicationBuilder builder)
         {
-            builder.Services.AddSqlServerDatabase(builder.Configuration);
+            builder.Services.AddDatabase(builder.Configuration);
             return builder;
         }
-        private static IServiceCollection AddSqlServerDatabase(this IServiceCollection services, IConfiguration config)
-        {
-            string connStr = config.GetConnectionString("AppDbConnection");
-            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(connStr));
-            return services;
-        }
-
-        
     }
 }

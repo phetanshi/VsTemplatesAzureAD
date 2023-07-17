@@ -6,12 +6,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
   </PropertyGroup>
-
+	
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.20" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.20">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\$ext_projectname$.Data\$ext_projectname$.Data.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.Dtos\$ext_projectname$.Dtos.csproj" />
     <ProjectReference Include="..\$ext_projectname$.Logging\$ext_projectname$.Logging.csproj" />
   </ItemGroup>
 

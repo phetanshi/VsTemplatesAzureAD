@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -11,9 +12,10 @@ namespace $safeprojectname$
         private readonly IConfiguration _config;
         private DbLoggerConfiguration _dbLoggerConfig;
 
-        public DbLoggerProvider(IOptionsMonitor<DbLoggerConfiguration> logConfigOptions, IConfiguration config)
+        public DbLoggerProvider(IOptionsMonitor<DbLoggerConfiguration> logConfigOptions, IConfiguration config, IHttpContextAccessor httpContextAccess)
         {
             this._dbLoggerConfig = logConfigOptions.CurrentValue;
+            this._dbLoggerConfig.AppContext = httpContextAccess;
             this._onChangeToken = logConfigOptions.OnChange(updateConfig => _dbLoggerConfig = updateConfig);
             this._config = config;
         }

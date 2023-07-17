@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using $ext_projectname$.Logging.Database.Models;
+using $safeprojectname$.Database.Models;
 
 namespace $safeprojectname$.Database
 {

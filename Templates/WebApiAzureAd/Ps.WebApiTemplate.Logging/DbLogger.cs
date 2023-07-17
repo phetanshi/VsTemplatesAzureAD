@@ -36,6 +36,9 @@ namespace $safeprojectname$
         {
             try
             {
+                string userId = logConfig.GetLoginUserId();
+                string displayUrl = logConfig.GetDisplayUrl() ?? "-";
+
                 if (!IsEnabled(logLevel))
                     return;
 
@@ -46,31 +49,17 @@ namespace $safeprojectname$
                     case LogLevel.Debug:
                     case LogLevel.Information:
                     case LogLevel.Warning:
-                    case LogLevel.Critical:
-                        ActivityLog logObj = ReadObj<TState, ActivityLog>(state);
-                        if(logObj == null)
-                        {
-                            logObj = new ActivityLog();
-                            logObj.UserId = "no-user";
-                            logObj.Message = message;
-                            logObj.UrlOrModule = "-";
-                            logObj.LogDateTime = DateTime.UtcNow;
-                        }
+                        ActivityLog logObj = GetActivityLogObject(message, userId, displayUrl, logLevel);
                         LogActivity(logObj);
                         break;
+                    case LogLevel.Critical:
                     case LogLevel.Error:
-                        ErrorLog error = ReadObj<TState, ErrorLog>(state);
-                        if (error == null)
-                            LogError(message, exception);
-                        else
-                            LogError(error);
+                        ErrorLog error = GetErrorLogObject(message, userId, displayUrl, exception);
+                        LogError(error);
                         break;
                 }
             }
-            catch(Exception ex)
-            {
-
-            }
+            catch { }
         }
 
         private TResult ReadObj<TState, TResult>(TState state)
@@ -80,11 +69,38 @@ namespace $safeprojectname$
                 var result = (TResult)Convert.ChangeType(state, typeof(TResult));
                 return result;
             }
-            catch (Exception ex)
-            {
-            }
+            catch { }
             return default(TResult);
         }
+        
+        private ActivityLog GetActivityLogObject(string message, string userId, string displayUrl, LogLevel logLevel)
+        {
+            ActivityLog logObj = new ActivityLog();
+            logObj.UserId = userId;
+            logObj.Message = message;
+            logObj.UrlOrModule = displayUrl;
+            logObj.LogLevelId = (int)logLevel;
+            logObj.LogDateTime = DateTime.UtcNow;
+            return logObj;
+        }
+        private ErrorLog GetErrorLogObject(string message, string userId, string displayUrl, Exception exception)
+        {
+            ErrorLog errorLog = new ErrorLog();
+            errorLog.Message = message;
+            errorLog.LogLevelId = (int)LogLevel.Error;
+            errorLog.ErrorDateTime = DateTime.Now;
+            errorLog.UrlOrModule = displayUrl;
+            errorLog.UserId = userId;
+            if (exception != null)
+            {
+                errorLog.ClassName = exception.TargetSite?.DeclaringType?.FullName;
+                errorLog.MethodName = exception.TargetSite?.DeclaringType?.Name;
+                errorLog.StackTrace = exception.StackTrace ?? "-";
+                errorLog.ErrorType = exception.GetType()?.FullName ?? "-";
+            }
+            return errorLog;
+        }
+        
         private void LogActivity(ActivityLog activityLog)
         {
             try
@@ -92,10 +108,7 @@ namespace $safeprojectname$
                 loggerDbContext.ActivityLogs.Add(activityLog);
                 loggerDbContext.SaveChanges();
             }
-            catch(Exception ex)
-            {
-
-            }
+            catch { }
         }
 
         private void LogError(ErrorLog errorLog)
