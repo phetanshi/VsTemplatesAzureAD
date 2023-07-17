@@ -2,12 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using System.Net;
+using System.Text;
 using Ps.WebApiTemplate.Api.Util;
 using Ps.WebApiTemplate.Api.Exceptions;
 using Ps.WebApiTemplate.Api.Constants;
-using Ps.WebApiTemplate.Logging;
-using System.Net;
-using System.Text;
 
 namespace Ps.WebApiTemplate.Api
 {
@@ -31,18 +30,18 @@ namespace Ps.WebApiTemplate.Api
             
             try
             {
-                logger.LogInformation(userId, displayUrl, $"Started : {url}");
+                logger.LogInformation($"Started : {url}");
                 await next(context);
-                logger.LogInformation(userId, displayUrl, $"Completed : {url}");
+                logger.LogInformation($"Completed : {url}");
             }
             catch (UnauthorizedException ex)
             {
-                logger.LogError(userId, displayUrl, ex, "Unauthorized Error Occured");
+                logger.LogError(ex, "Unauthorized Error Occured");
                 await ExecuteAsync(executor, context, HttpStatusCode.Unauthorized);
             }
             catch (Exception ex)
             {
-                logger.LogError(userId, displayUrl, ex, "An unhandled exception has occurred while executing the rquest");
+                logger.LogError(ex, "An unhandled exception has occurred while executing the rquest");
                 await ExecuteAsync(executor, context, HttpStatusCode.InternalServerError);
             }
         }

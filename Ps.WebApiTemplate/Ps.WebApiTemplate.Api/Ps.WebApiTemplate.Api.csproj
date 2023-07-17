@@ -7,11 +7,7 @@
     <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
     <UserSecretsId>ffd28364-1997-49f7-8427-ab6b8a5e3fa3</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="ExceptionHandlerMiddleware.cs~RFf0accb.TMP" />
-  </ItemGroup>
-
+	
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />

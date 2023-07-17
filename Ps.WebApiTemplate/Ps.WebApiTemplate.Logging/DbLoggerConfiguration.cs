@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.Extensions.Logging;
 
 namespace Ps.WebApiTemplate.Logging
 {
@@ -8,5 +10,25 @@ namespace Ps.WebApiTemplate.Logging
         public LogLevel MinimumLogLevel { get; set; } = LogLevel.Information;
         public string ConnectionString { get; set; }
         public string LoginUserId { get; set; }
+        public IHttpContextAccessor AppContext { get; set; }
+        public string GetLoginUserId()
+        {
+            if (this.AppContext != null)
+            {
+                return AppContext.HttpContext.User.Identity.Name ?? string.Empty;
+            }
+            else
+                return string.Empty;
+        }
+
+        public string GetDisplayUrl()
+        {
+            if (this.AppContext != null)
+            {
+                return AppContext.HttpContext.Request.GetDisplayUrl() ?? string.Empty;
+            }
+            else
+                return string.Empty;
+        }
     }
 }
