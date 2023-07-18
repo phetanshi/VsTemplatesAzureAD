@@ -1,4 +1,6 @@
-﻿using Ps.WebApiTemplate.Api.AutoMapperProfiles;
+﻿using Microsoft.AspNetCore.Authorization;
+using Ps.WebApiTemplate.Api.Auth;
+using Ps.WebApiTemplate.Api.AutoMapperProfiles;
 using Ps.WebApiTemplate.Api.Services;
 using Ps.WebApiTemplate.Api.Services.Definitions;
 
@@ -19,6 +21,7 @@ namespace Ps.WebApiTemplate.Api.AppStart
         }
         private static void AddOthes(this IServiceCollection services)
         {
+            services.AddScoped<IAuthorizationHandler, AppAuthorizationHandler>();
             services.AddAutoMapper(typeof(EmployeeAutoMapperProfile));
         }
     }
