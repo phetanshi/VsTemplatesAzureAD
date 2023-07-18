@@ -8,7 +8,7 @@ namespace $safeprojectname$.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Policy = AppConstants.APP_POLICY)]
     public class EmployeeController : AppBaseController
     {
         private readonly ISampleService _sampleService;

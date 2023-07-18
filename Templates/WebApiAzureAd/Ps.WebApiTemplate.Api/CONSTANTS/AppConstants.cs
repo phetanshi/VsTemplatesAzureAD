@@ -8,5 +8,7 @@
         public const string FAIL = "Something went wrong!";
         public const string TOKEN_EXPIRED = "Authentication token expired!";
         public const string TOKEN_NOT_EXPIRED = "Authentication token is still alive!";
+
+        public const string APP_POLICY = "AppPolicy";
     }
 }

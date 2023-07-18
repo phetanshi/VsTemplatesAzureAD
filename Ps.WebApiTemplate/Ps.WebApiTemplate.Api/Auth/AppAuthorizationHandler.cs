@@ -23,6 +23,17 @@ namespace Ps.WebApiTemplate.Api.Auth
                 return Task.CompletedTask;
             }
 
+            Claim employeeIdClaim = context.User.Claims.FirstOrDefault(x => x.Type.ToLower() == "employeeid");
+
+            if (employeeIdClaim == null)
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim("EmployeeId", "123456")
+                };
+                var appIdentity = new ClaimsIdentity(claims);
+                context.User.AddIdentity(appIdentity);
+            }
 
             var emp = Repository.GetById<Employee>(x => x.Email.ToLower() == emailId.Value.ToLower());
 
