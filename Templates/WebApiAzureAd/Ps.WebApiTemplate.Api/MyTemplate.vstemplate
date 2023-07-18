@@ -1,7 +1,7 @@
 <VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
   <TemplateData>
     <Name>Ps.WebApiTemplate.Api</Name>
-    <Description>.NET 6 WEB API Project</Description>
+    <Description>.NET 6 Web Api Project with Azure Ad authenticaiton and App specific Autherization</Description>
     <ProjectType>CSharp</ProjectType>
     <ProjectSubType>
     </ProjectSubType>
@@ -28,6 +28,10 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="DatabaseService.cs">DatabaseService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="LoggingService.cs">LoggingService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="MiscAppServices.cs">MiscAppServices.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Auth" TargetFolderName="Auth">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppAuthorizationHandler.cs">AppAuthorizationHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="AppAuthorizationRequirement.cs">AppAuthorizationRequirement.cs</ProjectItem>
       </Folder>
       <Folder Name="AutoMapperProfiles" TargetFolderName="AutoMapperProfiles">
         <ProjectItem ReplaceParameters="true" TargetFileName="EmployeeAutoMapperProfile.cs">EmployeeAutoMapperProfile.cs</ProjectItem>
